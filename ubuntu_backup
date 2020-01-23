@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Creates a directory for the backup
+DIR=`date "+%m-%d"`"_backup"
+mkdir $DIR
+
+BACKUP_DIR="/home/`whoami`/OneDrive/repos/ubuntu_backup/"$DIR
+
+# Copies all non-empty directories in /home
+cd
+for dir in `ls`
+do
+	if [ $dir != "OneDrive" -a "`ls $dir`" != "" ]
+	then
+		cp -r $dir $BACKUP_DIR
+		if [ $? -eq 0 ]
+		then
+			echo "copied content in $dir to $BACKUP_DIR"
+		else
+			echo "copied to move content in $dir to $BACKUP_DIR"
+		fi
+	fi
+done
+
+# Copies the bookmark of chrome
+cp /home/`whoami`/.config/google-chrome/Default/Bookmarks $BACKUP_DIR
+if [ $? -eq 0 ] 
+then
+	echo "copied the bookmark of chrome"
+else
+	echo "failed to copy the bookmark of chrome"
+fi
