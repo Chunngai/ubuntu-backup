@@ -10,7 +10,7 @@ BACKUP_DIR="/home/`whoami`/OneDrive/repos/ubuntu_backup/"$DIR
 cd
 for dir in `ls`
 do
-	if [ $dir != "OneDrive" -a "`ls $dir`" != "" ]
+	if [ $dir != "OneDrive" -a $dir != "dlang" -a $dir != "onedrive" -a "`ls $dir`" != "" ]
 	then
 		cp -r $dir $BACKUP_DIR
 		if [ $? -eq 0 ]
