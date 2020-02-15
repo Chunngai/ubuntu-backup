@@ -17,7 +17,7 @@ do
 		then
 			echo "copied content in $dir to $BACKUP_DIR"
 		else
-			echo "copied to move content in $dir to $BACKUP_DIR"
+			echo "failed to copy content in $dir to $BACKUP_DIR"
 		fi
 	fi
 done
