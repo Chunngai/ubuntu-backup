@@ -4,7 +4,7 @@
 DIR=`date "+%m-%d"`"_backup"
 mkdir $DIR
 
-BACKUP_DIR="/home/`whoami`/OneDrive/repos/ubuntu_backup/"$DIR
+BACKUP_DIR="/home/`whoami`/OneDrive/Repos/ubuntu_backup/"$DIR
 
 # Copies all non-empty directories in /home
 cd
